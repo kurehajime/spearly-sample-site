@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Spearly Sample Site</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- コンテンツ埋め込みのためのJS -->
+		<script src="https://static.spearly.com/js/v2/spearly-cms.browser.js" defer></script>
+		<script>window.addEventListener('DOMContentLoaded',()=>{const t=document.querySelectorAll(':not(:defined)');for(const e of t) {e.style.visibility="hidden";}; window.spearly.config.AUTH_KEY="xmSuEI1UYTv4bt-o3j8W4RN7bz1rMJiGwR6dQS8M_BM"},{once:true})</script>
+		<!-- このタグにはAPIキーが含まれています。環境に合わせて変更してください。埋め込み方法画面からここのたぐをコピーペーストできます。 -->
+
+	</head>
+	<body class="">
+		<h1>コンテンツのリスト表示</h1>
+		<!-- コンテンツ一覧 -->
+		<post-sample-list>
+			<h1>{%= post-sample_title %}</h1>
+			<img width="400" src="{%= post-sample_image %}" />
+			<p>{%= post-sample_description %}</p>
+		</post-sample-list>
+
+		<hr>
+
+		<h1>コンテンツの単体表示</h1>
+		<!-- <post-sample-item> GETパラメータを使う場合はこちら-->
+		<post-sample-item data-public-id="c-W4g9a3hUFe8RCTfdNHuV"><!-- public id は作成したコンテンツに合わせてください -->
+			<h1>{%= post-sample_title %}</h1>
+			<img width="400" src="{%= post-sample_image %}" />
+			<div style="background: url('{%= post-sample_image %}');"></div>
+			<p>{%= post-sample_description %}</p>
+		</post-sample-item>
+
+		<hr>
+
+		<h1>フォームの表示</h1>
+
+
+		<!-- フォーム埋め込み -->
+		<spearly-form
+			data-form-id="f-srWRFB51wt2bozMkdjX0"
+		><!-- こちらのidも環境に合わせて変えてください -->
+
+
+			<h1 class="title">{%= form_title %}</h1>
+			<h2 class="subtitle">{%= form_description %}</h2>
+
+			<div class="field">
+					<div class="label">{%= form_label_name %}</div>
+
+					<div class="control">
+							{%= form_name %}
+					</div>
+
+					<p class="help">{%= form_description_name %}</p>
+			</div>
+
+			<div class="field">
+					<div class="label">{%= form_label_email %}</div>
+
+					<div class="control">
+							{%= form_email %}
+					</div>
+
+					<p class="help">{%= form_description_email %}</p>
+			</div>
+
+			<div class="field">
+					<div class="label">{%= form_label_content %}</div>
+
+					<div class="control">
+							{%= form_content %}
+					</div>
+
+					<p class="help">{%= form_description_content %}</p>
+			</div>
+
+			<button class="submit" type="submit">送信</button>
+	</spearly-form>
+	</body>
+</html>
